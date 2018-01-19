@@ -10,5 +10,6 @@ import retrofit2.http.Query;
  */
 
 public interface APIInterface {
-
+        @GET("data/2.5/weather")
+        Call<Weather> getUser(@Query("id") String userLanguage,@Query("appid") String appID);
 }
