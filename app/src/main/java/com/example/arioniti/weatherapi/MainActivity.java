@@ -22,15 +22,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
+        if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 
+        }
 
-
-
+        APIInterface movieApiService = retrofit.create(APIInterface.class);
+        
 
     }
 }
