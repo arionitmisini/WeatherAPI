@@ -31,7 +31,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         APIInterface movieApiService = retrofit.create(APIInterface.class);
-        
+        Call<Weather> call = movieApiService.getWeather("2172797","2d16334731df0891ec0aae3edf3d73af");
+
+        call.enqueue(new Callback<Weather>() {
+            @Override
+            public void onResponse(Call<Weather> call, Response<Weather> response) {
+
+                System.out.println(response.body().getName());
+            }
+            @Override
+            public void onFailure(Call<Weather> call, Throwable throwable) {
+                throwable.getMessage();
+            }
+        });
 
     }
 }
