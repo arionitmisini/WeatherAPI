@@ -1,8 +1,8 @@
-package com.example.arioniti.weatherapi.pojo;
+package com.example.arioniti.weatherapi;
 
+import com.example.arioniti.weatherapi.pojo.Weather;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -11,5 +11,5 @@ import retrofit2.http.Query;
 
 public interface APIInterface {
         @GET("data/2.5/weather")
-        Call<Weather> getWeather(@Query("id") String userLanguage,@Query("appid") String appID);
+        Call<Weather> getWeather(@Query("id") String userLanguage, @Query("appid") String appID);
 }
